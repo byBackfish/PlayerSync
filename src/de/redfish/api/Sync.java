@@ -38,7 +38,6 @@ public class Sync {
     row.with("enderchest",
             ItemStackSerializer.itemStackArrayToBase64(player.getEnderChest().getContents()));
 
-    // ADD ECONOMY TO this
 
     row.with("coins", PlayerSync.getInstance().getEconomy().getBalance(player));
 
@@ -72,29 +71,6 @@ public class Sync {
     player.getInventory().setChestplate(armor[2] != null ? armor[2] : new ItemStack(Material.AIR));
     player.getInventory().setHelmet(armor[3] != null ? armor[3] : new ItemStack(Material.AIR));
 
-    /*  for (int i = 0; i < armor.length; i++) {
-        System.out.println(armor[i].getType().getId());
-        switch (i) {
-          case 0:
-            player.getInventory().setHelmet(armor[i] != null ? armor[i] : new ItemStack(Material.AIR));
-            break;
-
-          case 1:
-            player.getInventory().setChestplate(armor[i] != null ? armor[i] : new ItemStack(Material.AIR));
-            break;
-
-          case 2:
-            player.getInventory().setLeggings(armor[i] != null ? armor[i] : new ItemStack(Material.AIR));
-            break;
-
-          case 3:
-            player.getInventory().setBoots(armor[i] != null ? armor[i] : new ItemStack(Material.AIR));
-            break;
-
-        }
-      }
-
-     */
 
     ItemStack[] ec = ItemStackSerializer.itemStackArrayFromBase64(r.get("enderchest"));
     for (int i = 0; i < ec.length; i++) {
@@ -115,7 +91,7 @@ public class Sync {
     } else {
       player.sendMessage(String.format("An error occured: %s", response.errorMessage));
     }
-    // ASSIGN COINS TO PLAYER HERE
+ 
 
   }
 
