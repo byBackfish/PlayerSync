@@ -1,0 +1,8 @@
+name: Sync
+main: de.redfish.PlayerSync
+version: 0.0.1
+commands:
+  sync:
+    usage: /sync <sync>
+authors:
+  - byBackfish
